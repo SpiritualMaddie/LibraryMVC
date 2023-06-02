@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LibraryMVC.Models.ViewModels.BorrowedBookViewModel>
+
+@{
+    ViewData["Title"] = "Borrowed books";
+}
+
+<!-- Breadcrumbs -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">My borrowed books</li>
+    </ol>
+</nav>
+<!-- Breadcrumbs end -->
+
+<div class="container container-fluid mt-5 container-white">
+    <div class="text-center mt-2">
+        <h2>My borrowed books</h2>
+        <hr />
+    </div>
+
+    <div class="row my-3 mx-3">
+        <div class="col-md-5 mt-4">
+            <img src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=685&q=80"
+                 class="frame-img" />
+        </div>
+
+        <div class="col-md-7">
+            <br />
+            <p>Here you can search for a customer by name and find what books they have borrowed</p>
+            <form asp-action="GetBorrowedBooks" method="get">
+                <input type="text"
+                       name="searchString"
+                       id="searchString"
+                       class="form-control"
+                       placeholder="Search by name of customer" />
+                <button type="submit"
+                        class="btn btn-primary mt-2"
+                        style="width: 40px; height: 29px; position: relative;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-search" viewBox="0 0 16 16" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
